@@ -10,7 +10,7 @@ export LOG_FILE=qemu.log
 export ISO_URL=https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/alpine-extended-3.20.0-x86_64.iso
 
 
-run: alpine.iso alpine.qcow2
+run: alpine.qcow2
 	qemu-system-x86_64 -name ${VM_NAME} -m ${RAM_SIZE} -smp ${CPU_CORES} \
 		-drive file=${DISK_FILE},if=virtio \
 		-netdev user,id=n1,hostfwd=tcp::2222-:22,hostfwd=tcp::15432-:5432 \
