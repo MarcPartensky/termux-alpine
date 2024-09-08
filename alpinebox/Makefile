@@ -15,7 +15,7 @@ run: alpine.iso alpine.qcow2
 		-drive file=${DISK_FILE},if=virtio \
 		-netdev user,id=n1,hostfwd=tcp::2222-:22,hostfwd=tcp::15432-:5432 \
 		-device virtio-net,netdev=n1 \
-		-vnc :1  -display none -nographic -serial mon:stdio
+		-vnc :0 -nographic -serial mon:stdio
 clean:
 	rm alpine.iso alpine.qcow2
 reset:
